@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:fn="http://xmlns.jcp.org/jsp/jstl/functions"
+      xmlns:p="http://primefaces.org/ui">>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+        <!--<h:outputStylesheet name="css/stylesheet.css" />-->
+
+        <title>Combat time!</title>
+    </h:head>
+    <body>
+        <div id="mainContainer">
+
+            <div id="right" class="subContainer Custom2" >
+                <h4>ATTACKER!</h4>
+                <img src="skulldice.png" alt="skull" width="25" height="25"/>
+                <img src="skulldice.png" alt="skull" width="25" height="25"/>
+                <img src="skulldice.png" alt="skull" width="25" height="25"/>
+                <h4> </h4>
+                <h:outputText value="#{fn:replace(DiceRollerC.atkResponse,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.atkSkullNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.atkShieldNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.atkBlankNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+            </div>
+            <div id="right"    class="subContainer Custom1" >
+                <h4>DEFENDER!</h4>
+                <img src="shielddice.png" alt="shield" width="25" height="25"/>
+                <img src="shielddice.png" alt="shield" width="25" height="25"/>
+               <img src="shielddice.png" alt="shield" width="25" height="25"/>
+               <h4> </h4>
+                <h:outputText value="#{fn:replace(DiceRollerC.defResponse,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.defSkullNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.defShieldNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:outputText value="#{fn:replace(DiceRollerC.defBlankNum,'\\n','&lt;br/&gt;')}" escape="false"/>
+                
+            </div>    
+            <div id="left" class="subContainer Custom3" >
+                <img src="hslogo2.png" alt="skull" width="300" height="100"/>
+                
+                <h5>---------</h5>
+                <h:outputText value="#{fn:replace(DiceRollerC.compare,'\\n','&lt;br/&gt;')}" escape="false"/>
+                <h:form>
+                <h:commandButton id="backButton" value="Back" action="index"/>
+                </h:form>
+            </div>
+            
+        </div>
+    </body>
+</html>

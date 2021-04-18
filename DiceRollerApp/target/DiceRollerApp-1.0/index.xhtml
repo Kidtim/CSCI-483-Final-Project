@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+        <link href="css/stylesheet.css" rel="stylesheet" type="text/css" />
+        <!--<h:outputStylesheet name="css/stylesheet.css" />-->
+
+        <title>Tim's Dice Roller</title>
+    </h:head>
+    
+
+    <body>
+        <div id="mainContainer">
+
+            <div id="left" class="subContainer">
+                <img src="DnDLogo.jpg" alt="DnDLogo" width="100" hight="100"/>
+                <h4> DnD 4d6 Dice roller! </h4>
+                <h5> How many stats would you like to roll?:
+                </h5>
+                <h5> (Enter any number between 1-6) </h5>
+                <h:form id="Testbutton">
+                    <h:inputText id="userNumber" size="1" maxlength="1" value="#{DiceRollerA.userNumber}"/>
+                    <h:commandButton id="submit" value="Generate Stats!" action="response" />
+                </h:form>
+
+                
+            </div>
+            
+            <div id="left" class="subContainer">
+                <img src="DnDLogo.jpg" alt="DnDLogo" width="100" hight="100"/>
+                <h4>What dice needs rolling?</h4>
+                <h:form>
+                    <h:inputText id="DiceAmount" size="1" maxlength="1" value="#{DiceRollerD.diceNum}"/>
+                    <h4>d</h4>
+                    <h:inputText id="DiceType" size="1" maxlength="2" value="#{DiceRollerD.diceType}"/>
+                    <h4>Add to Total:</h4>
+                    <h:inputText id="ModTotal" size="1" maxlength="2" value="#{DiceRollerD.modifierTotal}"/>
+                    <h4>Add to Each Roll:</h4>
+                    <h:inputText id="ModSingle" size="1" maxlength="2" value="#{DiceRollerD.modifierSingle}"/>
+                    <h:commandButton id="submit" value="Roll 'em up!" action="xdx" />
+                </h:form>
+                
+                
+            </div>
+            
+            <div id="right" class="subContainer">
+                <img src="hslogo.jpg" alt="HSlogo" width="200" hight="100"/>
+                <h4> Heroscape Dice Roller! </h4>
+                <h:form id="HSRoller">
+                    <h:inputText id="HSUserNumber" size="1" maxlength="2" value="#{DiceRollerB.HSUserNumber}" />
+                    <h:commandButton id="HSSubmit" value="Roll the Dice!" action="HSRoll" />
+                </h:form>
+                
+            </div>
+            
+            <div id="right" class="subContainer">
+                <img src="hslogo2.png" alt="HSlogo2" width="200" hight="100"/>
+                <h4> Attack VS Defense </h4>
+                <h:form id="HSRoller2">
+                    <h:inputText id="AtkNumber" size="1" maxlength="2" value="#{DiceRollerC.atkNumber}" />
+                    <h:inputText id="DefNumber" size="1" maxlength="2" value="#{DiceRollerC.defNumber}" />
+                    <h:commandButton id="HSSubmit2" value="Attack and Defend!" action="atkdef" />
+                </h:form>
+                
+            </div>
+            
+        </div>
+    </body>
+</html>
